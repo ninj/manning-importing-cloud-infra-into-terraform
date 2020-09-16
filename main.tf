@@ -1,6 +1,12 @@
 // syntax is compatible with specific versions of Terraform, starting at 0.13
 terraform {
   required_version = ">= 0.13.0, < 1.0.0"
+  required_providers {
+    aws = {
+      source  = "registry.terraform.io/hashicorp/aws"
+      version = "1.0.0"
+    }
+  }
 }
 
 // instantiate AWS provider with a region
