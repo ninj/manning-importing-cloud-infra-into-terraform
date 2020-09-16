@@ -5,7 +5,7 @@ terraform {
 
 // instantiate AWS provider with a region
 provider "aws" {
-  region  = "eu-west-1"
+  region = "eu-west-1"
 }
 
 // create 100 users
