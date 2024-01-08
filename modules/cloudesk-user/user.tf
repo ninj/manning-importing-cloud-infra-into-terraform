@@ -3,5 +3,10 @@ resource "aws_iam_user" "user" {
 
   tags = {
     managed-by = "manning-terraform"
+    my-tag = "my-value"
   }
+}
+
+output "users" {
+  value = aws_iam_user.user
 }

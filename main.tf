@@ -16,14 +16,13 @@ provider "aws" {
 
 // create 100 users
 module "users" {
-  source = "./modules/cloudesk-user/"
-  for_each = toset([
-    for i in range(100) : format("user-%02d", i)
-  ])
-
-  name = each.key
-
+  source    = "./modules/cloudesk-user/"
   providers = {
     aws = aws
   }
+
+  for_each = toset([
+    for i in range(100) : format("user-%02d", i)
+  ])
+  name = each.key
 }
